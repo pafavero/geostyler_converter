@@ -1,0 +1,31 @@
+{
+  "name": "my-app2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "geostyler": "^12.0.0",
+    "geostyler-geojson-parser": "^1.0.1",
+    "geostyler-legend": "^4.0.0",
+    "geostyler-mapbox-parser": "^3.1.1",
+    "geostyler-qgis-parser": "^2.0.0",
+    "geostyler-shapefile-parser": "^1.0.0",
+    "geostyler-sld-parser": "^5.0.0",
+    "geostyler-style": "^7.2.0",
+    "jsdom": "^21.1.1",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "react-dom-parser": "^0.1.7"
+  }
+}
