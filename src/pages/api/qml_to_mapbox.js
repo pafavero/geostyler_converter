@@ -1,4 +1,3 @@
-//url: http://localhost:3000/api/qml_to_mapbox
 import SLDParser from "geostyler-sld-parser";
 import QGISParser from "geostyler-qgis-parser";
 import MapboxParser from "geostyler-mapbox-parser";

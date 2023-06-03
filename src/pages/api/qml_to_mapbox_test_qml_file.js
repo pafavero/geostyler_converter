@@ -1,5 +1,3 @@
-//url: http://localhost:3000/api/http://localhost:3000/api/
-
 import QGISParser from "geostyler-qgis-parser";
 import MapboxParser from "geostyler-mapbox-parser";
 var fs = require('fs');
@@ -20,7 +18,7 @@ export default function handler(req, res) {
   // console.log('fileToConvert', fileToConvert)
   fs.readFile(fileToConvert, 'utf-8', function(err, fileContent) {
     if (err) {
-      onError(err);
+      res.status(200).json('Error: file not found!')
       return;
     }
     qgisParser.readStyle(fileContent).then(({output: theirStyle}) => {
@@ -35,9 +33,5 @@ export default function handler(req, res) {
         }).catch(error => {console.error(error); res.status(200).json('Error')})
     }).catch(error => {console.error(error); res.status(200).json('Error')});
   });
-
 }
-
-
-
   
