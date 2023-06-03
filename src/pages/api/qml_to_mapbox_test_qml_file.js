@@ -1,6 +1,8 @@
 import QGISParser from "geostyler-qgis-parser";
 import MapboxParser from "geostyler-mapbox-parser";
-import serverPath from "../../helper"
+import getConfig from 'next/config'
+import path from 'path'
+
 var fs = require('fs');
 
 // DO NOT LOOK TO REACT LIBRARY: GeoStyler is an Open Source React library 
@@ -12,12 +14,20 @@ var fs = require('fs');
 // https://github.com/geostyler/geostyler-mapbox-parser
 
 export default function handler(req, res) {
+
+  const env = process.env.NODE_ENV
+  let fileToConvert
+  if(env == "development"){
+    fileToConvert = 'public/'
+  }
+  else if (env == "production"){
+    fileToConvert = ''
+  }
   const qgisParser = new QGISParser()
   const mapboxParser = new MapboxParser()
-  const fileToConvert = serverPath('public/' + req.query.qml_file + '.qml') 
-  console.log('req', req.query, fileToConvert)
-  res.status(200).json(fileToConvert)
-  // console.log('fileToConvert', fileToConvert)
+  fileToConvert += req.query.qml_file + '.qml'
+  
+  console.log('fileToConvert', fileToConvert)
   fs.readFile(fileToConvert, 'utf-8', function(err, fileContent) {
     if (err) {
       res.status(200).json('Error: file not found!')
@@ -36,4 +46,5 @@ export default function handler(req, res) {
     }).catch(error => {console.error(error); res.status(200).json('Error')});
   });
 }
+
   
