@@ -17,15 +17,10 @@ export default function handler(req, res) {
 
   const env = process.env.NODE_ENV
   let fileToConvert
-  if(env == "development"){
-    fileToConvert = 'public/'
-  }
-  else if (env == "production"){
-    fileToConvert = '/'
-  }
+  const qmlDirectory = path.join(process.cwd(), 'public/');
   const qgisParser = new QGISParser()
   const mapboxParser = new MapboxParser()
-  fileToConvert += req.query.qml_file + '.qml'
+  fileToConvert = qmlDirectory + req.query.qml_file + '.qml'
   
   console.log('fileToConvert', fileToConvert)
   fs.readFile(fileToConvert, 'utf-8', function(err, fileContent) {
