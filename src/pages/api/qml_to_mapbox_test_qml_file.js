@@ -1,5 +1,6 @@
 import QGISParser from "geostyler-qgis-parser";
 import MapboxParser from "geostyler-mapbox-parser";
+import serverPath from "../../helper"
 var fs = require('fs');
 
 // DO NOT LOOK TO REACT LIBRARY: GeoStyler is an Open Source React library 
@@ -13,7 +14,7 @@ var fs = require('fs');
 export default function handler(req, res) {
   const qgisParser = new QGISParser()
   const mapboxParser = new MapboxParser()
-  const fileToConvert = 'public/' + req.query.qml_file + '.qml'
+  const fileToConvert = serverPath('public/' + req.query.qml_file + '.qml') 
   console.log('req', req.query, fileToConvert)
   // console.log('fileToConvert', fileToConvert)
   fs.readFile(fileToConvert, 'utf-8', function(err, fileContent) {

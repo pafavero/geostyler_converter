@@ -3,4 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  serverRuntimeConfig: {
+      PROJECT_ROOT: __dirname
+  }
+}
