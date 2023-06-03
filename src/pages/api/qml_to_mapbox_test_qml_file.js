@@ -16,6 +16,7 @@ export default function handler(req, res) {
   const mapboxParser = new MapboxParser()
   const fileToConvert = serverPath('public/' + req.query.qml_file + '.qml') 
   console.log('req', req.query, fileToConvert)
+  res.status(200).json(fileToConvert)
   // console.log('fileToConvert', fileToConvert)
   fs.readFile(fileToConvert, 'utf-8', function(err, fileContent) {
     if (err) {
