@@ -21,7 +21,7 @@ export default function handler(req, res) {
     fileToConvert = 'public/'
   }
   else if (env == "production"){
-    fileToConvert = ''
+    fileToConvert = '/'
   }
   const qgisParser = new QGISParser()
   const mapboxParser = new MapboxParser()
