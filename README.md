@@ -25,3 +25,7 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 Open [http://localhost:3000/api/qml_to_mapbox_test_qml_file](http://localhost:3000/api/qml_to_mapbox_test_qml_file)
 
 Open [http://localhost:3000/api/qml_to_mapbox](http://localhost:3000/api/qml_to_mapbox)
+
+Open [https://geostyler-converter.vercel.app/api/qml_to_mapbox_test_qml_file?qml_file=test4](https://geostyler-converter.vercel.app/api/qml_to_mapbox_test_qml_file?qml_file=test4)
+
+
